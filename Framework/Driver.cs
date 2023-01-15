@@ -28,3 +28,30 @@ namespace Framework
         }
     }
 }
+//*[@class='preloader__spinner']
+//span[contains(text(),'Sisters') and not(contains(@class,'mobile')) ]
+//*[@class='form-input' and contains(@aria-controls,'route-from')]
+//*[@id='ticket-backward-checkbox']
+//*[@id='return-date']
+//*[@id='return-time']
+//span[contains(text(),'Ieškoti kelionės')]
+//*[@id='depart-date']
+//*[@id='depart-time']
+//*[@class='search-results']
+//*[class='field-container__field-error']
+//*[@id='by Ticket']
+//*[@id='byTravel']
+//*[(@class= 'form-input')]
+//*[(@class= 'form-input ')]
+//*[@id='destination-date']
+//*[@class='alert-content'}/div[2]
+//*[@class='button  ticket-search-submit']
+//*[@class='form-input ']
+//*[@class='form-input has-icon']
+//*[class='button  ']
+
+
+
+
+
+
