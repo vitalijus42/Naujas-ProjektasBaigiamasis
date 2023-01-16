@@ -89,6 +89,7 @@ namespace Framework.POM
         {
             return Common.GetElementText(elementListNameLocator);
         }
+
     }
 }
 

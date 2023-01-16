@@ -57,6 +57,7 @@
     <Compile Include="POM\Common.cs" />
     <Compile Include="POM\languagesDemo.cs" />
     <Compile Include="POM\SearchTrip.cs" />
+    <Compile Include="POM\TicketReturn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
