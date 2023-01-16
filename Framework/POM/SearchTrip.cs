@@ -19,6 +19,8 @@ namespace Framework.POM
         private static string toTimeLocator = "//*[@class='datepicker-container ']/label[2]";
         private static string toSearchLocator = "//span[contains(text(),'Ieškoti kelionės')]";
         private static string elementTextLocator = "//*[@class='search-results-list__route title-primary']";
+        private static string fromReturnTimeLocator = "//*[@id='return-time']";
+        private static string elementListNameLocator = "//*[@class='search-results-list__route title-primary']";
 
         public static void Open()
         {
@@ -75,6 +77,17 @@ namespace Framework.POM
         public static string GetTheSelectedText()
         {
             return Common.GetElementText(elementTextLocator);
+        }
+
+        public static void EnterTextToReturnTimeField(string text)
+        {
+            Common.WaitForElementToBeClickable(fromReturnTimeLocator);
+            Common.SendKeysToElement(fromReturnTimeLocator, text);
+        }
+
+        public static string GetTheSelectedTextListName()
+        {
+            return Common.GetElementText(elementListNameLocator);
         }
     }
 }

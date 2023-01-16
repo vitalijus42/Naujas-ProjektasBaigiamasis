@@ -34,7 +34,7 @@ namespace Framework.POM
 
         internal static void WaitForElementToBeClickable(string locator)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(100));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
         }
        
