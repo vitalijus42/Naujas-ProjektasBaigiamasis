@@ -23,44 +23,48 @@ namespace Tests
         public void SearchTripTest1()
         {
             string expectedText = "Vilnius - Kaunas";
-            SearchTrip.ClickOnFromField();
-            SearchTrip.HoverTheMouseOver("//*[@class='form-input' and contains(@aria-controls,'route-from')]");
+            //SearchTrip.ClickOnFromField();
+            //SearchTrip.HoverTheMouseOver("//*[@class='form-input' and contains(@aria-controls,'route-from')]");
             SearchTrip.EnterTextToFromField("Vilnius");
-            SearchTrip.HoverTheMouseOver("//*[@class='form-input' and contains(@aria-controls,'route-to')]");
+           /* SearchTrip.HoverTheMouseOver("//*[@class='form-input' and contains(@aria-controls,'route-to')]")*/;
             SearchTrip.EnterTextToToField("Kaunas");
-            SearchTrip.HoverTheMouseOver("//*[@class='datepicker-input-container']");
-            SearchTrip.ClickOnTimeField();
+            //SearchTrip.HoverTheMouseOverAndClick("//*[@class='datepicker-input-container']");
+            //SearchTrip.ClickOnTimeField();
             SearchTrip.ClickOnSearchTrip();
             string actualText = SearchTrip.GetTheSelectedText();
 
             Assert.AreEqual(expectedText, actualText);
-           }
+        }
+
         [Test] 
-        public void ReturnTicketSearchTest ()
+        public void ReturnTicketSearchTest()
         {
             string ExpectedText = "Pasirinkite kelionę pirmyn";
-            SearchTrip.ClickOnFromField();
-            SearchTrip.HoverTheMouseOver("//*[@class='form-input' and contains(@aria-controls,'route-from')]");
+            //SearchTrip.ClickOnFromField();
+            //SearchTrip.HoverTheMouseOver("//*[@class='form-input' and contains(@aria-controls,'route-from')]");
             SearchTrip.EnterTextToFromField("Vilnius");
-            SearchTrip.HoverTheMouseOver("//*[@class='form-input' and contains(@aria-controls,'route-to')]");
-            SearchTrip.EnterTextToToField("Ignalina");
-     
-            SearchTrip.HoverTheMouseOver("//*[@id='ticket-backward-checkbox']");
-            SearchTrip.HoverTheMouseOver("//*[@aria-label='Mon Jan 23 2023']");
-            SearchTrip.HoverTheMouseOver("//*[@id='return-time']");
-            SearchTrip.EnterTextToReturnTimeField("{Home}1234");
-            SearchTrip.HoverTheMouseOver("//span[contains(text(),'Ieškoti kelionės')]");
+            //SearchTrip.HoverTheMouseOver("//*[@class='form-input' and contains(@aria-controls,'route-to')]");
+            SearchTrip.EnterTextToToField1("Ignalina");
+            SearchTrip.Click();
+
+            //SearchTrip.HoverTheMouseOverTicketBackward("");
+            ////SearchTrip.HoverTheMouseOver("//*[@aria-label='Mon Jan 23 2023']");
+            //SearchTrip.HoverTheMouseOver("//*[@for='return-time']");
+            //SearchTrip.EnterTextToReturnTimeField("");
+            SearchTrip.ClickOnSearchTrip1();
             string ActualText = SearchTrip.GetTheSelectedTextListName();
 
             Assert.AreEqual(ExpectedText, ActualText);
+
+           //[Test]
 
 
         }
            [TearDown]
            public void TearDown()
            {
-            Driver.CloseDriver(); 
-           }
+            Driver.CloseDriver();
+        }
 
     }
 }

@@ -17,9 +17,9 @@ namespace Framework.POM
         private static string toFieldLocator = "//*[@class='form-input' and contains(@aria-controls,'route-to')]";
         private static string toDateLocator = "//*[@class='datepicker-input-container']";
         private static string toTimeLocator = "//*[@class='datepicker-container ']/label[2]";
-        private static string toSearchLocator = "//span[contains(text(),'Ieškoti kelionės')]";
+        private static string toSearchLocator = "//*[@class='button  is-danger is-big ']";
         private static string elementTextLocator = "//*[@class='search-results-list__route title-primary']";
-        private static string fromReturnTimeLocator = "//*[@id='return-time']";
+        private static string fromReturnTimeLocator = "//*[@for='return-time']";
         private static string elementListNameLocator = "//*[@class='search-results-list__route title-primary']";
 
         public static void Open()
@@ -36,7 +36,8 @@ namespace Framework.POM
         public static void EnterTextToFromField(string text)
         {
             Common.WaitForElementToBeClickable(fromFieldLocator);
-            Common.SendKeysToElement(fromFieldLocator, text);
+            Common.SendKeysToElement(fromFieldLocator, "Vilnius");
+            Common.ClickElement("//*[@id='react-autowhatever-route-from']/ul/li[1]");
         }
 
         public static void ClickOnToField()
@@ -48,7 +49,7 @@ namespace Framework.POM
         public static void EnterTextToToField(string text)
         {
             Common.WaitForElementToBeClickable(toFieldLocator);
-            Common.SendKeysToElement(toFieldLocator, text);
+            Common.SendKeysToElement(toFieldLocator, "Kaunas");
         }
 
         public static void ClickOnDateField()
@@ -82,7 +83,7 @@ namespace Framework.POM
         public static void EnterTextToReturnTimeField(string text)
         {
             Common.WaitForElementToBeClickable(fromReturnTimeLocator);
-            Common.SendKeysToElement(fromReturnTimeLocator, text);
+            Common.SendKeysToElement(fromReturnTimeLocator, "1450");
         }
 
         public static string GetTheSelectedTextListName()
@@ -90,6 +91,32 @@ namespace Framework.POM
             return Common.GetElementText(elementListNameLocator);
         }
 
+        public static void Click()
+        {
+            Common.ClickElement("//*[@for='ticket-backward-checkbox']");
+        }
+
+        public static void ClickOnSearchTrip1()
+        {
+            Common.ClickElement("//*[@class='search-form-button']/button");
+        }
+
+        public static void HoverTheMouseOverTicketBackward(string text)
+        {
+            Common.MoveMousePauseAndClick("//*[@for='ticket-backward-checkbox']", text);
+        }
+
+        public static void EnterTextToToField1(string text)
+        {
+            Common.WaitForElementToBeClickable(toFieldLocator);
+            Common.SendKeysToElement(toFieldLocator, "Ignalina");
+            Common.ClickElement("//*[@id='react-autowhatever-route-to']/ul/li[1]");
+        }
+
+        public static void HoverTheMouseOverAndClick(string text)
+        {
+            Common.MoveMousePauseAndClick(fromFieldLocator, text);
+        }
     }
 }
 

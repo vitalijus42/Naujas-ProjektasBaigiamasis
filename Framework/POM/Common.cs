@@ -51,8 +51,8 @@ namespace Framework.POM
             Actions actions = new Actions(Driver.GetDriver());
 
             actions.MoveToElement(element);
-            actions.MoveByOffset(2, 2);
-            actions.Pause(TimeSpan.FromSeconds(2));
+            //actions.MoveByOffset(2, 2);
+            //actions.Pause(TimeSpan.FromSeconds(2));
             actions.Perform();
 
             

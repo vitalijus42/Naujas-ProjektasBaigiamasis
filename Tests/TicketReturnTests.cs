@@ -18,7 +18,7 @@ namespace Tests
             TicketReturn.Open();
         }
         [Test]
-        public void TicketReturnTest()
+        public void TicketReturnAlertTest()
         {
 
             string ExpectedText = "Klaida!";
@@ -34,7 +34,7 @@ namespace Tests
 
             Assert.AreEqual(ExpectedText, ActualText);
 
-        }
+        } 
         [TearDown]
         public void teardown()
         {
