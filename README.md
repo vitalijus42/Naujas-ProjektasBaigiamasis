@@ -30,11 +30,14 @@ Scenarijus: pasitelkiant windows visual studio automatiniu testavimu metodu,naud
  
  5. Siusti pranesima funkcionalumo testo atvejis
  Paspausti ant laukelio headeryje siusti pranesima
- Is issokancio laukelio ivesti validu elektroninio pasto adresa
- Parasyti zinute
  Pazymeti laukelyje "gauti siunciamo pranesimo kopija el pastu"
  Paspausti mygtuka siusti
- Patikrinti, ar tiketinas rezultatas atitinka aktualu rezultata, kad pranesimas butu issiustas
+ Patikrinti ar testas pavyko
+ 
+ 6. Atidaryti uz uzdaryti prisijungimo forma headerio dalyje testavimo atvejis
+ Paspausti laukelyje prisijungti
+ Paspausti uzdaryti prisijungimo forma
+ patikrinti, ar testas passina
  
  
  
