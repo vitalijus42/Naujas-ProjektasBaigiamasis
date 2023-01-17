@@ -12,7 +12,12 @@ namespace Tests
 {
     internal class HeaderDemoTests : BaseTest
     {
-       
+        [SetUp]
+        public void setup()
+        {
+            Driver.CreateDriver();
+            HeaderDemo.Open();
+        }
         [Test]
         public void HeaderTestMessageFunctionalityTest()
         {
@@ -26,6 +31,10 @@ namespace Tests
             HeaderDemo.ClickOnLoginLable();
             HeaderDemo.ClickOnCloseButton();
         }
-       
+        [TearDown]
+        public void teardown()
+        {
+            Driver.CloseDriver();
+        }
     }
 }

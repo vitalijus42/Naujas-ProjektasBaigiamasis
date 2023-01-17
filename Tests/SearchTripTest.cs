@@ -19,6 +19,7 @@ namespace Tests
         {
             Driver.CreateDriver();
             SearchTrip.Open();
+            
         }
         [Test]
         public void SearchTripTest1()

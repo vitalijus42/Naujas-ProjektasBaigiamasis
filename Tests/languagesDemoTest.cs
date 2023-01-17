@@ -14,7 +14,12 @@ namespace Tests
 {
     internal class languagesDemotests : BaseLanguagesDemo
     {
-       
+        [SetUp]
+        public void SetUp()
+        {
+            Driver.CreateDriver();
+            languagesDemo.Open();
+        }
         [Test]
         public void ChangeLanguageDropdownTest()
         {
@@ -32,7 +37,11 @@ namespace Tests
 
 
         }
-       
+        [TearDown]
+        public void teardown()
+        {
+            Driver.CloseDriver();
+        }
 
 
 

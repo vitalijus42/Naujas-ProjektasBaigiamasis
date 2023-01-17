@@ -13,8 +13,10 @@ namespace Tests.BaseClasses
     {
         [SetUp]
         public virtual void SetUp()
+
         {
             Driver.CreateDriver();
+            
         }
         [TearDown]
         public virtual void TearDown()

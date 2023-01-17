@@ -12,7 +12,12 @@ namespace Tests
 {
     internal class TicketReturnTests : BaseTicketReturnDemo
     {   
-       
+        [SetUp]
+        public void SetUp()
+        {
+            Driver.CreateDriver();
+            TicketReturn.Open();
+        }
         [Test]
         public void TicketReturnAlertTest()
         {
@@ -30,7 +35,11 @@ namespace Tests
             Assert.AreEqual(ExpectedText, ActualText);
 
         }
-       
+        [TearDown]
+        public void teardown()
+        {
+            Driver.CloseDriver();
+        }
 
 
 

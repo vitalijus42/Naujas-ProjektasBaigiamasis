@@ -31,7 +31,9 @@ namespace Framework
         
         public static void TakeScreenshot(string fullName)
         {
-            string test = AppDomain.CurrentDomain.BaseDirectory+ fullName;
+            string screenshotsDirectoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}screenshots";
+            string ScrrenshotName = $"{screenshotsDirectoryPath}\\scr-{Guid.NewGuid()}.png";
+
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
             screenshot.SaveAsFile("screenshot.png", ScreenshotImageFormat.Png);
         }
