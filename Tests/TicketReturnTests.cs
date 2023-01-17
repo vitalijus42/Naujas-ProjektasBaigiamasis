@@ -6,17 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tests.BaseClasses;
 
 namespace Tests
 {
-    internal class TicketReturnTests
+    internal class TicketReturnTests : BaseTicketReturnDemo
     {   
-        [SetUp]
-        public void SetUp()
-        {
-            Driver.CreateDriver();
-            TicketReturn.Open();
-        }
+       
         [Test]
         public void TicketReturnAlertTest()
         {
@@ -34,11 +30,7 @@ namespace Tests
             Assert.AreEqual(ExpectedText, ActualText);
 
         }
-        [TearDown]
-        public void teardown()
-        {
-            Driver.CloseDriver();
-        }
+       
 
 
 

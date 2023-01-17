@@ -48,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\BaseHeaderDemoClass.cs" />
+    <Compile Include="BaseClasses\BaseLanguagesDemo.cs" />
+    <Compile Include="BaseClasses\BaseSearchTripDemo.cs" />
+    <Compile Include="BaseClasses\BaseTicketReturnDemo.cs" />
     <Compile Include="HeaderDemoTests.cs" />
     <Compile Include="languagesDemoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

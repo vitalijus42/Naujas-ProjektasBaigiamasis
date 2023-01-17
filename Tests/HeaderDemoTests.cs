@@ -6,17 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tests.BaseClasses;
 
 namespace Tests
 {
-    internal class HeaderDemoTests
+    internal class HeaderDemoTests : BaseTest
     {
-        [SetUp]
-        public void setup()
-        {
-            Driver.CreateDriver();
-            HeaderDemo.Open();
-        }
+       
         [Test]
         public void HeaderTestMessageFunctionalityTest()
         {
@@ -30,10 +26,6 @@ namespace Tests
             HeaderDemo.ClickOnLoginLable();
             HeaderDemo.ClickOnCloseButton();
         }
-        [TearDown]
-        public void teardown()
-        {
-            Driver.CloseDriver();
-        }
+       
     }
 }

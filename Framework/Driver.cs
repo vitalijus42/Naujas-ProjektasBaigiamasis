@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System;
 
 namespace Framework
 {
@@ -25,6 +26,14 @@ namespace Framework
         public static void OpenPage(string url)
         {
             driver.Navigate().GoToUrl(url);
+        }
+
+        
+        public static void TakeScreenshot(string fullName)
+        {
+            string test = AppDomain.CurrentDomain.BaseDirectory+ fullName;
+            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            screenshot.SaveAsFile("screenshot.png", ScreenshotImageFormat.Png);
         }
     }
 }

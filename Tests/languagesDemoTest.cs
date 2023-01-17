@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.AccessControl;
 using System.Net.NetworkInformation;
+using Tests.BaseClasses;
 
 namespace Tests
 {
-    internal class languagesDemotests
+    internal class languagesDemotests : BaseLanguagesDemo
     {
-        [SetUp]
-        public void SetUp()
-        {
-            Driver.CreateDriver();
-            languagesDemo.Open();
-        }
+       
         [Test]
         public void ChangeLanguageDropdownTest()
         {
@@ -36,11 +32,7 @@ namespace Tests
 
 
         }
-        [TearDown]
-        public void teardown()
-        {
-            Driver.CloseDriver();
-        }
+       
 
 
 

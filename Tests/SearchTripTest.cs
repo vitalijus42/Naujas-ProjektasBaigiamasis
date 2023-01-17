@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.AccessControl;
 using System.Net.NetworkInformation;
+using Tests.BaseClasses;
 
 namespace Tests
 {
-    internal class SearchTripTest
+    internal class SearchTripTest : BaseSearchTripDemo
     {
         [SetUp]
         public void SetUp()
