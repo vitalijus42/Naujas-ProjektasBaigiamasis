@@ -12,9 +12,10 @@ namespace Framework.POM
     {
         private static string url = "https://autobusubilietai.lt";
         private static string allowCookiesButton = "//*[@aria-label='allow cookies']";
-        private static string languageLocatorButton = "//*[@class='language-dropdown dropdown ']/div";
-        public static string EnglishLanguageLocator = "//*[@id='react-autowhatever-route-to']/ul/li[1]";
+        private static string languageLocatorButton = "//*[@class='language-dropdown dropdown ']";
+        public static string EnglishLanguageLocator = "/*[@class='dropdown-content']/div[2]";
         private static string DropdownHeaderButtonLocator = "//*[@lang='en']";
+        private static string MainLanguageLocator = "//*[@lang='lt']";
 
         public static void ClickEnglishLanguageButton()
         {
@@ -22,10 +23,7 @@ namespace Framework.POM
             Common.WaitAndClick(EnglishLanguageLocator);
         }
 
-        public static void HoverTheMouseOver(string text)
-        {
-            Common.MoveMousePauseAndClick(languageLocatorButton, text);
-        }
+        
 
         public static void Open()
         {
@@ -38,9 +36,12 @@ namespace Framework.POM
             return Common.GetElementText(DropdownHeaderButtonLocator);
         }
 
-        public static void HoverTheMouseOverAndClickOnElement(string text)
+        
+
+        public static void ClickLanguagesButtonOnHeader()
         {
-            Common.MoveMousePauseAndClick(languageLocatorButton, text);
+            Common.WaitForElementToBeClickable(MainLanguageLocator);
+            Common.WaitAndClick(MainLanguageLocator);
         }
     }
 }

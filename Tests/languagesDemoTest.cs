@@ -20,12 +20,16 @@ namespace Tests
             languagesDemo.Open();
         }
         [Test]
-        public void ChangeLanguageDropdown()
+        public void ChangeLanguageDropdownTest()
         {
 
             string ExpectedLanguage = "EN";
-            languagesDemo.HoverTheMouseOverAndClickOnElement("");
-            languagesDemo.ClickEnglishLanguageButton();
+            languagesDemo.ClickLanguagesButtonOnHeader();
+            languagesDemo.ClickEnglishLanguageButton();// testas failina sitoj vietoj,neranda tokio elemento,
+            //todel kad atidaromas sumazintas langas, mano laptopo monitorius nepakankamai didelis,
+            //kad pasileistu pilna svetaines versija google chrome narsyklej. Per inspection neradau to elemento sumazinto lango
+            //versijoje, sita versija neturi headerio meniu dalyje tokio funkcionalumo kaip kalbos
+            //pasirinkimas isskleidziant dropdown funkcija
             string actualLanguage = languagesDemo.GetTheSelectedLanguage();
 
             Assert.AreEqual(ExpectedLanguage, actualLanguage);  
