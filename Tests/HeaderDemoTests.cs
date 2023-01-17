@@ -22,6 +22,7 @@ namespace Tests
         {
             HeaderDemo.ClickOnMessageElement();
             HeaderDemo.ClickOnSendCopyElement();
+            HeaderDemo.ClickOnMessageSendButton();
         }
         [Test]
         public void LoginOpenAndCloseFunctionalityTest()

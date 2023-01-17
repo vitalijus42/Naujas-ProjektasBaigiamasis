@@ -15,6 +15,7 @@ namespace Framework.POM
         private static string sendCopyLocator = "//*[@name='sendCopy']";
         private static string LoginLocator = "//*[@class=\"header-menus\"]/div/div[2]";
         private static string CloseButtonLocator = "//*[@class='button  only-icon is-danger button-close modal-close-button']";
+        private static string SendAMessageLocator = "//*[@fdprocessedid='mjt6eg']";
 
         public static void ClickOnCloseButton()
         {
@@ -32,6 +33,12 @@ namespace Framework.POM
         {
             Common.WaitForElementToBeClickable(headerButtonMessageLocator);
             Common.WaitAndClick(headerButtonMessageLocator);
+        }
+
+        public static void ClickOnMessageSendButton()
+        {
+            Common.WaitForElementToBeClickable(SendAMessageLocator);
+            Common.WaitAndClick(SendAMessageLocator);
         }
 
         public static void ClickOnSendCopyElement()
