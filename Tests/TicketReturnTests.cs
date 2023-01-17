@@ -22,8 +22,8 @@ namespace Tests
         {
 
             string ExpectedText = "Klaida!";
-            TicketReturn.HoverTheMouseOver("//*[@class='button  is-inverted is-small ']");
-            TicketReturn.HoverTheMouseOver("//div[contains(text(),'Neturiu bilieto numerio')");
+            TicketReturn.HoverTheMouseOverReturnTicket("");
+            TicketReturn.ClickNoTicketNumber("//div[contains(text(),'Neturiu bilieto numerio')");
             TicketReturn.HoverTheMouseOver("//*[@class='field-container__field ']");
             TicketReturn.EnterTextCity("Alytus");
             TicketReturn.HoverTheMouseOver("//*[@class='field-container__field ']/input[2]");
@@ -35,11 +35,11 @@ namespace Tests
             Assert.AreEqual(ExpectedText, ActualText);
 
         } 
-        [TearDown]
-        public void teardown()
-        {
-            Driver.CloseDriver();
-        }
+        //[TearDown]
+        //public void teardown()
+        //{
+        //    Driver.CloseDriver();
+        //}
 
 
 

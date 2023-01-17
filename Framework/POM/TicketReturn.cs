@@ -12,7 +12,7 @@ namespace Framework.POM
     {
         private static string url = "https://autobusubilietai.lt";
         private static string allowCookiesButton = "//*[@aria-label='allow cookies']";
-        private static string returnButtonLocator = "//*[@class='button  is-inverted is-small ']";
+        private static string returnButtonLocator = "//*[@class='know-box-action-subcol']";
         private static string toCityFieldLocator = "//*[@class='field-container__field ']/input";
         private static string toNameFieldLocator = "//*[@class='field-container__field ']/input[2]";
         public static string ErrorLocator = "//*[@class='alert-spacing']";
@@ -43,6 +43,17 @@ namespace Framework.POM
         {
             Driver.OpenPage(url);
             Common.WaitAndClick(allowCookiesButton);
+        }
+
+        public static void HoverTheMouseOverReturnTicket(string text)
+        {
+            Common.MoveMousePauseAndClick(returnButtonLocator, text);
+        }
+
+        public static void ClickNoTicketNumber(string v)
+        {
+            Common.WaitForElementToBeClickable("//*[@class='know-box-action-subcol']");
+            Common.WaitAndClick("//*[@class='know-box-action-subcol']");
         }
     }
 }

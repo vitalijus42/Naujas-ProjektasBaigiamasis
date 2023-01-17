@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Framework.POM
 {
@@ -12,8 +13,8 @@ namespace Framework.POM
         private static string url = "https://autobusubilietai.lt";
         private static string allowCookiesButton = "//*[@aria-label='allow cookies']";
         private static string languageLocatorButton = "//*[@class='language-dropdown dropdown ']/div";
-        public static string EnglishLanguageLocator = "en";
-        private static string DropdownHeaderButtonLocator = "header-en";
+        public static string EnglishLanguageLocator = "//*[@id='react-autowhatever-route-to']/ul/li[1]";
+        private static string DropdownHeaderButtonLocator = "//*[@lang='en']";
 
         public static void ClickEnglishLanguageButton()
         {
@@ -35,6 +36,11 @@ namespace Framework.POM
         public static string GetTheSelectedLanguage()
         {
             return Common.GetElementText(DropdownHeaderButtonLocator);
+        }
+
+        public static void HoverTheMouseOverAndClickOnElement(string text)
+        {
+            Common.MoveMousePauseAndClick(languageLocatorButton, text);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Tests
         {
 
             string ExpectedLanguage = "EN";
-            languagesDemo.HoverTheMouseOver("\"//*[@class='language-dropdown dropdown ']/div\"");
+            languagesDemo.HoverTheMouseOverAndClickOnElement("");
             languagesDemo.ClickEnglishLanguageButton();
             string actualLanguage = languagesDemo.GetTheSelectedLanguage();
 
